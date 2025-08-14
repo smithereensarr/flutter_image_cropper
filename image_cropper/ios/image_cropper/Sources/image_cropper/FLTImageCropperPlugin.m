@@ -4,6 +4,24 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <Photos/Photos.h>
 
+// UIColor extension for handling Flutter's ARGB32 format
+@interface UIColor (ARGB32)
++ (UIColor *)colorWithARGB32:(uint32_t)argb32;
+@end
+
+@implementation UIColor (ARGB32)
++ (UIColor *)colorWithARGB32:(uint32_t)argb32 {
+    // Extract color channels from 32-bit ARGB value
+    CGFloat alpha = ((argb32 >> 24) & 0xFF) / 255.0f;
+    CGFloat red = ((argb32 >> 16) & 0xFF) / 255.0f;
+    CGFloat green = ((argb32 >> 8) & 0xFF) / 255.0f;
+    CGFloat blue = (argb32 & 0xFF) / 255.0f;
+    
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+@end
+
+
 @interface FLTImageCropperPlugin() <TOCropViewControllerDelegate>
 @end
 
@@ -133,6 +151,8 @@
     NSNumber *rectY = options[@"ios.rect_y"];
     NSNumber *rectWidth = options[@"ios.rect_width"];
     NSNumber *rectHeight = options[@"ios.rect_height"];
+    NSNumber *toolbarColor = options[@"ios.toolbar_color"];
+    NSNumber *toolbarWidgetColor = options[@"ios.toolbar_widget_color"];
     NSNumber *showActivitySheetOnDone = options[@"ios.show_activity_sheet_on_done"];
     NSNumber *showCancelConfirmationDialog = options[@"ios.show_cancel_confirmation_dialog"];
     NSNumber *rotateClockwiseButtonHidden = options[@"ios.rotate_clockwise_button_hidden"];
@@ -155,6 +175,12 @@
         && rectWidth && [rectWidth isKindOfClass:[NSNumber class]]
         && rectHeight && [rectHeight isKindOfClass:[NSNumber class]]) {
         controller.imageCropFrame = CGRectMake(rectX.floatValue, rectY.floatValue, rectWidth.floatValue, rectHeight.floatValue);
+    }
+    if (toolbarColor && [toolbarColor isKindOfClass:[NSNumber class]]) {
+        controller.toolbar.backgroundColor = [UIColor colorWithARGB32:toolbarColor.intValue];
+    }
+    if (toolbarWidgetColor && [toolbarWidgetColor isKindOfClass:[NSNumber class]]) {
+        controller.toolbar.tintColor = [UIColor colorWithARGB32:toolbarWidgetColor.intValue];
     }
     if (showActivitySheetOnDone && [showActivitySheetOnDone isKindOfClass:[NSNumber class]]) {
         controller.showActivitySheetOnDone = showActivitySheetOnDone.boolValue;

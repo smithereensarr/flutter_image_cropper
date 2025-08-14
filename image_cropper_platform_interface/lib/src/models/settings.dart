@@ -280,6 +280,12 @@ class IOSUiSettings extends PlatformUiSettings {
   final double? rectWidth;
   final double? rectHeight;
 
+  /// desired color of the Toolbar
+  final Color? toolbarColor;
+
+  /// desired color of Toolbar text and buttons (default is black)
+  final Color? toolbarWidgetColor;
+
   /// If true, when the user hits 'Done', a UIActivityController will appear
   /// before the view controller ends.
   final bool? showActivitySheetOnDone;
@@ -363,6 +369,8 @@ class IOSUiSettings extends PlatformUiSettings {
     this.rectY,
     this.rectWidth,
     this.rectHeight,
+    this.toolbarColor,
+    this.toolbarWidgetColor,
     this.showActivitySheetOnDone,
     this.showCancelConfirmationDialog = false,
     this.rotateClockwiseButtonHidden = false,
@@ -394,6 +402,8 @@ class IOSUiSettings extends PlatformUiSettings {
         'ios.rect_y': this.rectY,
         'ios.rect_width': this.rectWidth,
         'ios.rect_height': this.rectHeight,
+        'ios.toolbar_color': this.toolbarColor?.toARGB32,
+        'ios.toolbar_widget_color': this.toolbarWidgetColor?.toARGB32,
         'ios.show_activity_sheet_on_done': this.showActivitySheetOnDone,
         'ios.show_cancel_confirmation_dialog':
             this.showCancelConfirmationDialog,
