@@ -15,14 +15,11 @@ flutter:
         pluginClass: ImageCropperPlugin
       ios:
         pluginClass: FLTImageCropperPlugin
-      web:
-        default_package: image_cropper_for_web
 
 dependencies:
   flutter:
     sdk: flutter
   image_cropper_platform_interface: ^7.1.0
-  image_cropper_for_web: ^6.1.0
 
 dev_dependencies:
   flutter_test:
