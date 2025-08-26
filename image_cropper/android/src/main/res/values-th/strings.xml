@@ -8,5 +8,6 @@
     <string name="ucrop_rotate">หมุน</string>
     <string name="ucrop_scale">ขนาด</string>
     <string name="ucrop_crop">พืชผล</string>
+    <string name="ucrop_done">ยืนยัน</string>
 
 </resources>

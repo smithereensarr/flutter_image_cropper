@@ -8,5 +8,6 @@
     <string name="ucrop_rotate">Girar</string>
     <string name="ucrop_scale">Tamanho</string>
     <string name="ucrop_crop">Cortar</string>
+    <string name="ucrop_done">Confirmar</string>
 
 </resources>

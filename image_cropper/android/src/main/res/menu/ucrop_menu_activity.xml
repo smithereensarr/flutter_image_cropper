@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/menu_crop"
-        android:icon="@drawable/ucrop_ic_done"
-        android:title="@string/ucrop_menu_crop"
+        android:title="@string/ucrop_done"
+        android:textSize="14sp"
         app:showAsAction="ifRoom"/>
 
     <item

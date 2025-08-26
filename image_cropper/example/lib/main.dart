@@ -286,25 +286,26 @@ class _HomePageState extends State<HomePage> {
         compressQuality: 100,
         uiSettings: [
           AndroidUiSettings(
-            toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
-            toolbarWidgetColor: Colors.white,
+            toolbarTitle: '裁切',
+            toolbarColor: Color(0xFF10101A),
+            statusBarColor: Color(0xFF10101A),
+            backgroundColor: Color(0xFF10101A),
+            activeControlsWidgetColor: Color(0xFFFF7300),
+            toolbarWidgetColor: Color(0xFFFF7300),
             initAspectRatio: CropAspectRatioPreset.square,
             lockAspectRatio: false,
             aspectRatioPresets: [
               CropAspectRatioPreset.original,
               CropAspectRatioPreset.square,
               CropAspectRatioPreset.ratio4x3,
-              CropAspectRatioPresetCustom(),
             ],
           ),
           IOSUiSettings(
-            title: 'Cropper',
+            title: '裁切',
             aspectRatioPresets: [
               CropAspectRatioPreset.original,
               CropAspectRatioPreset.square,
               CropAspectRatioPreset.ratio4x3,
-              CropAspectRatioPresetCustom(),
             ],
           ),
           WebUiSettings(

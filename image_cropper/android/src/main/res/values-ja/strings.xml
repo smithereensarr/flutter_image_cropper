@@ -8,4 +8,5 @@
     <string name="ucrop_scale">拡大</string>
     <string name="ucrop_rotate">回転</string>
     <string name="ucrop_crop">比率</string>
+    <string name="ucrop_done">確認</string>
 </resources>

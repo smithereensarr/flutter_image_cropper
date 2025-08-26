@@ -8,5 +8,6 @@
     <string name="ucrop_rotate">Memutar</string>
     <string name="ucrop_scale">Skala</string>
     <string name="ucrop_crop">Pangkas</string>
+    <string name="ucrop_done">Konfirmasi</string>
 
 </resources>

@@ -7,5 +7,6 @@
     <string name="ucrop_rotate">旋转</string>
     <string name="ucrop_scale">缩放</string>
     <string name="ucrop_crop">裁剪</string>
+    <string name="ucrop_done">确认</string>
 
 </resources>

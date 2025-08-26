@@ -9,5 +9,6 @@
     <string name="ucrop_rotate">چرخش</string>
     <string name="ucrop_scale">اندازه</string>
     <string name="ucrop_crop">برش</string>
+    <string name="ucrop_done">تایید</string>
 
 </resources>
