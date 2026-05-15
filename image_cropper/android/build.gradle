@@ -5,11 +5,10 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-		maven { url 'https://jitpack.io' }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.3.0'
+        classpath 'com.android.tools.build:gradle:8.13.0'
     }
 }
 
@@ -17,7 +16,7 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
-		maven { url 'https://jitpack.io' }
+		maven { url = uri('https://jitpack.io') }
     }
 }
 
@@ -28,7 +27,7 @@ android {
     if (project.android.hasProperty("namespace")) {
         namespace 'com.yalantis.ucrop'
     }
-    compileSdkVersion 33
+    compileSdkVersion 36
 
     defaultConfig {
         minSdkVersion 16
@@ -37,6 +36,11 @@ android {
     }
     buildFeatures {
         buildConfig true
+    }
+    buildTypes {
+        release {
+            consumerProguardFiles 'consumer-proguard-rules.pro'
+        }
     }
     lintOptions {
         disable 'InvalidPackage'
