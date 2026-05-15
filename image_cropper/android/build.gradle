@@ -1,4 +1,4 @@
-group 'vn.hunghd.flutter.plugins.imagecropper'
+group 'com.yalantis.ucrop.imagecropper'
 version '1.0-SNAPSHOT'
 
 buildscript {

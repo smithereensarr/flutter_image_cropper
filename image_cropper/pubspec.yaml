@@ -11,7 +11,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: vn.hunghd.flutter.plugins.imagecropper
+        package: com.yalantis.ucrop.imagecropper
         pluginClass: ImageCropperPlugin
       ios:
         pluginClass: FLTImageCropperPlugin
